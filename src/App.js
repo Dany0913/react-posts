@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState, useEffect } from "react";
 
 function App() {
+  const URL = "https://api-posts-dce.herokuapp.com/";
+  const [posts, setPosts] = useState();
+
+  const getPosts = async () => {
+    try {
+      const resp = await fetch(URL);
+      const post = await resp.json();
+      console.log(post);
+      setPosts(post);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => getPosts(), []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ul>
+      {posts.map((post) => (
+        <li>{post.title}</li>
+      ))}
+    </ul>
   );
 }
 
