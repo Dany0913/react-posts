@@ -1,9 +1,10 @@
 import "./App.css";
 import { useState, useEffect } from "react";
+import Post from "./components/Post";
 
 function App() {
   const URL = "https://api-posts-dce.herokuapp.com/";
-  const [posts, setPosts] = useState();
+  const [posts, setPosts] = useState([]);
 
   const getPosts = async () => {
     try {
@@ -18,11 +19,19 @@ function App() {
 
   useEffect(() => getPosts(), []);
   return (
-    <ul>
-      {posts.map((post) => (
-        <li>{post.title}</li>
-      ))}
-    </ul>
+    <>
+      <h1>Blog posts populares</h1>
+      <div>
+        Orden:
+        <button>Ascendente</button>
+        <button>Descendente</button>
+      </div>
+      <ul>
+        {posts.map((post) => (
+          <Post key={post.id} {...post} />
+        ))}
+      </ul>
+    </>
   );
 }
 

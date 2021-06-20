@@ -1,0 +1,41 @@
+ul {
+  display: block;
+  justify-content: center;
+  width: 50%;
+  margin: 0 auto;
+  background-color: aqua;
+  list-style: none;
+}
+.displayFlex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.postGeneralDiv {
+  margin: 10px;
+  background-color: lightpink;
+}
+.postVotesDiv {
+  background-color: lightseagreen;
+}
+.postTextDiv {
+  width: 300px;
+  background-color: lightskyblue;
+}
+.postTextDiv a {
+  text-decoration: none;
+  color: black;
+}
+.postMainImg {
+  width: 200px;
+  height: 200px;
+}
+
+.postWriterDiv {
+  background-color: gray;
+}
+.postWriterImg {
+  width: 50px;
+  height: 50px;
+  margin: 0 5px;
+  border-radius: 25px;
+}
