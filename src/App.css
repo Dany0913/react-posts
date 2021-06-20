@@ -1,25 +1,45 @@
 ul {
-  display: block;
-  justify-content: center;
-  width: 50%;
+  width: 60%;
   margin: 0 auto;
-  background-color: aqua;
   list-style: none;
+  padding: 0;
+}
+li {
+  margin: 3% auto;
+  padding: 0;
+  min-width: 585px;
 }
 .displayFlex {
   display: flex;
   flex-wrap: wrap;
 }
 .postGeneralDiv {
-  margin: 10px;
-  background-color: lightpink;
+  justify-content: space-around;
+  align-items: center;
 }
-.postVotesDiv {
-  background-color: lightseagreen;
+.postVotesDiv p {
+  text-align: center;
+}
+.postVotesDiv button {
+  width: 0;
+  height: 0;
+  border-right: 15px solid white;
+
+  border-left: 15px solid white;
+
+  padding: 0;
+  cursor: pointer;
+}
+#btnAdd {
+  border-top: 15px solid white;
+  border-bottom: 15px solid #3074b3;
+}
+#btnSubstract {
+  border-top: 15px solid #3074b3;
+  border-bottom: 15px solid white;
 }
 .postTextDiv {
-  width: 300px;
-  background-color: lightskyblue;
+  width: 55%;
 }
 .postTextDiv a {
   text-decoration: none;
@@ -29,9 +49,11 @@ ul {
   width: 200px;
   height: 200px;
 }
-
+.postWriterDivContainer {
+  justify-content: flex-end;
+}
 .postWriterDiv {
-  background-color: gray;
+  width: 150px;
 }
 .postWriterImg {
   width: 50px;

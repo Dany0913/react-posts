@@ -7,9 +7,11 @@ const Post = (props) => {
         <img src={post_image_url} className="postMainImg"></img>
 
         <div className="postVotesDiv">
-          <button>+</button>
-          {votes}
-          <button>-</button>
+          <button id="btnAdd"></button>
+
+          <p>{votes}</p>
+
+          <button id="btnSubstract"></button>
         </div>
         <div className="postTextDiv">
           <a href={url}>
@@ -18,9 +20,11 @@ const Post = (props) => {
           <p>{description}</p>
         </div>
       </div>
-      <div className="postWriterDiv displayFlex">
-        <p>Escrito por: </p>
-        <img src={writer_avatar_url} className="postWriterImg"></img>
+      <div className="displayFlex postWriterDivContainer">
+        <div className="postWriterDiv displayFlex">
+          <p>Escrito por: </p>
+          <img src={writer_avatar_url} className="postWriterImg"></img>
+        </div>
       </div>
     </li>
   );
